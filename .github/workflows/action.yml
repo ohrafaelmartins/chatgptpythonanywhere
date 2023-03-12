@@ -9,20 +9,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-      
-    - name: Deploy to PythonAnywhere
-      uses: appleboy/scp-action@master
-      with:
-        host: ohrafaelmartins.ssh.pythonanywhere.com
-        username: ohrafaelmartins
-        key: ${{ secrets.PA_TOKEN }}
-        source: ./
-        target: /home/ohrafaelmartins/
-        args: -r -v
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
+      - name: Deploy to PythonAnywhere
+        uses: appleboy/scp-action@master
+        with:
+          host: ohrafaelmartins.ssh.pythonanywhere.com
+          username: ohrafaelmartins
+          key: ${{ secrets.PA_TOKEN }}
+          source: ./
+          target: /home/ohrafaelmartins/
