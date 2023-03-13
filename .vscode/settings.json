@@ -3,5 +3,8 @@
         "activityBar.background": "#521D11",
         "titleBar.activeBackground": "#722817",
         "titleBar.activeForeground": "#FDF9F8"
+    },
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-action.json": "file:///Users/rafaelmartins/Documents/chatgptpythonanywhere/.github/workflows/action.yml"
     }
 }

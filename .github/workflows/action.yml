@@ -25,6 +25,9 @@ jobs:
           PA_API_TOKEN: ${{ secrets.PA_TOKEN }}
         run: |
           cd $GITHUB_WORKSPACE
+          ls -lha
+          pwd
+          echo $GITHUB_WORKSPACE
           FILE=$(basename $PWD).tar.gz
           tar czf --warning=no-file-changed $FILE .
           curl -X POST \
