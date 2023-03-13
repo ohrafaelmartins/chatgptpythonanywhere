@@ -28,7 +28,7 @@ jobs:
           FILE=$(basename $PWD).tar.gz
           tar czfv /tmp/$FILE .
           curl -X POST \
-            https://www.pythonanywhere.com/api/v0/user/{{ secrets.PYTHONANYWHERE_USERNAME }} \
+            https://www.pythonanywhere.com/api/v0/user/${{ secrets.PYTHONANYWHERE_USERNAME }} \
             /home/ohrafaelmartins/$FILE \
             -H "Authorization: Token $PA_API_TOKEN" \
             --upload-file /tmp/$FILE
