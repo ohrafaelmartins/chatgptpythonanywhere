@@ -26,9 +26,9 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           FILE=$(basename $PWD).tar.gz
-          tar czfv $FILE .
+          tar czfv /tmp/$FILE .
           curl -X POST \
             https://www.pythonanywhere.com/api/v0/user/{{ secrets.PYTHONANYWHERE_USERNAME }} \
             /home/ohrafaelmartins/$FILE \
             -H "Authorization: Token $PA_API_TOKEN" \
-            --upload-file $FILE
+            --upload-file /tmp/$FILE
